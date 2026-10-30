@@ -1,0 +1,98 @@
+/* ------------------------------------------------------------------
+   Resortera vs. Torre — estilos de la página
+   El canvas mantiene siempre la proporción 16:9 y se adapta a la ventana.
+   ------------------------------------------------------------------ */
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #0b1017;
+  background-image:
+    radial-gradient(circle at 50% 0%, #1b2a3a 0%, #0b1017 65%);
+  overflow: hidden;
+  font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  color: #e8f1f8;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#game {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.infinite-seed-panel {
+  position: absolute;
+  z-index: 5;
+  top: 14%;
+  left: 50%;
+  width: min(390px, calc(100vw - 32px));
+  padding: 14px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(216, 220, 255, 0.35);
+  border-radius: 12px;
+  background: rgba(10, 18, 30, 0.96);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+  color: #e8f1f8;
+  display: none;
+}
+
+.infinite-seed-panel label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.infinite-seed-panel input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #7081bc;
+  border-radius: 6px;
+  background: #101c2a;
+  color: #fff;
+  font: inherit;
+  user-select: text;
+}
+
+.seed-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.infinite-seed-panel button {
+  min-height: 34px;
+  border: 0;
+  border-radius: 6px;
+  background: #4d5c9c;
+  color: #fff;
+  font: 700 11px "Trebuchet MS", "Segoe UI", sans-serif;
+  cursor: pointer;
+}
+
+.infinite-seed-panel button:hover,
+.infinite-seed-panel button:focus-visible {
+  background: #6879c1;
+}
+
+#game canvas {
+  /* 16:9 exacto, sin deformar.
+     !important: p5 fija width/height en línea al crear el canvas */
+  width: min(100vw, 177.78vh) !important;
+  height: min(100vh, 56.25vw) !important;
+  display: block;
+  border-radius: 12px;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+  cursor: default;
+  touch-action: none;
+}
