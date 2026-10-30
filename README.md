@@ -1093,4 +1093,4 @@ game.loadLevel(definicion, {
 - [matter.js](https://brm.io/matter-js/) — motor de física 2D.
 - Inspiración de género: *Angry Birds*, *Cut the Rope*.
 
-Trabajo individual para la asignatura de **Videojuegos (física)**.
+Trabajo  para la asignatura de **Visual Computing (física)**.
